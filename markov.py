@@ -5,7 +5,16 @@ import time
 import random
 from Tweets import Tweets
 
-hashtags = ['#MAGA', '#MakeAmericaGreatAgain', '#ImWithYou', '#AlwaysTrump', '#AmericaFirst', 'Trump2016']
+hashtags = [
+    '#MAGA',
+    '#MakeAmericaGreatAgain',
+    '#ImWithYou',
+    '#AlwaysTrump',
+    '#AmericaFirst',
+    '#Trump2016',
+    '#TrumpPence16'
+]
+
 tweets = Tweets()
 
 
@@ -83,10 +92,9 @@ def bot():
         text_model += " "
         text_model += d['text']
     text_model = markovify.Text(text_model)
-    tweet = text_model.make_sentence() + ' ' + random.choice(hashtags)
+    tweet = text_model.make_short_sentence(100) + ' ' + random.choice(hashtags)
     print('Posting to Twitter...')
-    shorten = (tweet[:140]) if len(tweet) > 140 else tweet
-    tweets.post(shorten)
+    tweets.post(tweet)
     print('Tweet you posted: ' + tweet)
 
 
