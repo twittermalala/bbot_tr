@@ -5,15 +5,19 @@ import time
 import random
 from Tweets import Tweets
 
-hashtags = ['#MAGA', '#MakeAmericaGreatAgain', '#ImWithYou', '#AlwaysTrump', '#AmericaFirst']
+hashtags = ['#MAGA', '#MakeAmericaGreatAgain', '#ImWithYou', '#AlwaysTrump', '#AmericaFirst', 'Trump2016']
 tweets = Tweets()
 
 
 def main(args):
     read = ''
 
-    print 'Trump Markov Chain'
-    print('Enter ? for a list of valid commands.')
+    print('Trump Markov Chain')
+    print("Enter 'seed' to to retrieve tweets and store in the database.")
+    print("Enter 'speeches' to load the text model from the speeches.txt file.")
+    print("Enter 'bot' to retrieve tweets from your database and post to Twitter.")
+    print("Enter 'exit' to close the program")
+    print("Enter '?' for a list of valid commands.")
 
     while read != 'exit':
         read = raw_input()
@@ -24,20 +28,20 @@ def main(args):
             print("Enter 'bot' to retrieve tweets from your database and post to Twitter.")
             print("Enter 'exit' to close the program")
 
-        if read == 'seed':
+        elif read == 'seed':
             seed()
 
-        if read == 'speeches':
+        elif read == 'speeches':
             speeches()
             schedule.every(10).minutes.do(speeches)
             while 1:
                 schedule.run_pending()
                 time.sleep(1)
 
-        if read == 'exit':
+        elif read == 'exit':
             pass
 
-        if read == 'bot':
+        elif read == 'bot':
             bot()
             schedule.every(10).minutes.do(bot)
             while 1:
