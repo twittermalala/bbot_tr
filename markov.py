@@ -77,7 +77,7 @@ def speeches():
     text_model = markovify.Text(f.read())
     tweet = text_model.make_short_sentence(100) + ' ' + random.choice(hashtags)
     print('Posting to Twitter...')
-    tweets.post(shorten)
+    tweets.post(tweet)
     f.close()
     print('Tweet you posted: ' + tweet)
 
