@@ -23,8 +23,8 @@ def main(args):
 
     print('Trump Markov Chain')
     print("Enter 'seed' to to retrieve tweets and store in the database.")
-    print("Enter 'speeches' to load the text model from the speeches.txt file.")
     print("Enter 'bot' to retrieve tweets from your database and post to Twitter.")
+    print("Enter 'speeches' to load the text model from the speeches.txt file and post to Twitter.")
     print("Enter 'exit' to close the program")
     print("Enter '?' for a list of valid commands.")
 
@@ -33,8 +33,8 @@ def main(args):
 
         if read == '?':
             print("Enter 'seed' to to retrieve tweets and store in the database.")
-            print("Enter 'speeches' to load the text model from the speeches.txt file.")
             print("Enter 'bot' to retrieve tweets from your database and post to Twitter.")
+            print("Enter 'speeches' to load the text model from the speeches.txt file and post to Twitter.")
             print("Enter 'exit' to close the program")
 
         elif read == 'seed':
