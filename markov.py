@@ -75,9 +75,8 @@ def seed():
 def speeches():
     f = open('speeches.txt', 'r')
     text_model = markovify.Text(f.read())
-    tweet = text_model.make_sentence() + ' ' + random.choice(hashtags)
+    tweet = text_model.make_short_sentence(100) + ' ' + random.choice(hashtags)
     print('Posting to Twitter...')
-    shorten = (tweet[:140]) if len(tweet) > 140 else tweet
     tweets.post(shorten)
     f.close()
     print('Tweet you posted: ' + tweet)
