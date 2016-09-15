@@ -17,25 +17,24 @@ hashtags = [
 
 tweets = Tweets()
 
-
-def main(args):
-    read = ''
-
-    print('Trump Markov Chain')
+def info():
     print("Enter 'seed' to to retrieve tweets and store in the database.")
     print("Enter 'bot' to retrieve tweets from your database and post to Twitter.")
     print("Enter 'speeches' to load the text model from the speeches.txt file and post to Twitter.")
     print("Enter 'exit' to close the program")
     print("Enter '?' for a list of valid commands.")
 
+def main(args):
+    read = ''
+
+    print('Trump Markov Chain')
+    info()
+
     while read != 'exit':
         read = raw_input()
 
         if read == '?':
-            print("Enter 'seed' to to retrieve tweets and store in the database.")
-            print("Enter 'bot' to retrieve tweets from your database and post to Twitter.")
-            print("Enter 'speeches' to load the text model from the speeches.txt file and post to Twitter.")
-            print("Enter 'exit' to close the program")
+            info()
 
         elif read == 'seed':
             seed()
