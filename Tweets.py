@@ -34,20 +34,6 @@ class Tweets:
             self.api.update_status(htmlparser.HTMLParser().unescape(tweet))
             
 
-    def _exists(self, twitter_id):
-
-        with self.conn.cursor() as cursor:
-
-            try:
-                sql = "SELECT twitter_id FROM tweets WHERE twitter_id = %s"
-                cursor.execute(sql, twitter_id)
-                self.conn.commit()
-                if cursor.fetchone():
-                    return True
-
-            except pymysql.err.InternalError as p:
-                print(p.message)
-
     def insert(self, tweets):
         for tweet in tweets:
             with self.conn.cursor() as cursor:
@@ -63,10 +49,9 @@ class Tweets:
                     # Remove additional spaces
                     string = ' '.join(string.split())
 
-                    if not self._exists(tweet.id):
-                        sql = "INSERT INTO `tweets` (`text`, `twitter_id`) VALUES (%s, %s)"
-                        cursor.execute(sql, (string, tweet.id))
-                        self.conn.commit()
+                    sql = "INSERT INTO `tweets` (`text`, `twitter_id`) VALUES (%s, %s)"
+                    cursor.execute(sql, (string, tweet.id))
+                    self.conn.commit()
                 except pymysql.err.InternalError as p:
                     print(p.message)
                     continue
