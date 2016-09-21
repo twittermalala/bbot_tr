@@ -1,6 +1,6 @@
 # trump-markov
 
-Trump Markov Chain
+Donald Trump twitter bot that uses a markov chain to generate tweets.
 
 ## How to Use
 
