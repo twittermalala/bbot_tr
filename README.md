@@ -1,8 +1,6 @@
 # trump-markov
 
-Donald Trump twitter bot that uses a markov chain to generate tweets.
-
-You can build the model by retreiving tweets from Trump's twitter or by loading the speeches.txt file included in the repo.
+Donald Trump twitter bot that uses a markov chain to generate tweets. You can build the model by retreiving tweets from Trump's twitter or by loading the speeches.txt file included in the repo.
 
 ## How to Use
 
