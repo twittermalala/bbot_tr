@@ -1,0 +1,9 @@
+{
+  "name": "trump-markov",
+  "description": "Donald Trump twitter bot that uses a markov chain to generate tweets.",
+  "image": "heroku/python",
+  "repository": "https://github.com/AnthonyBloomer/trump-markov",
+  "keywords": [
+    "python"
+  ]
+}
