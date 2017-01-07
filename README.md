@@ -6,6 +6,7 @@ Donald Trump twitter bot that uses a markov chain to generate tweets.
 
 1. Register a new application at [twitter](https://dev.twitter.com)
 2. Update config.py with your twitter application settings.
+3. Run ```python get_tweets.py``` to build the text model.
 3. Run ```pip install -r requirements.txt```
 4. Run ```python markov.py```
 
